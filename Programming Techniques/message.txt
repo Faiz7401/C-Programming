@@ -1,0 +1,76 @@
+ #include <stdio.h>
+
+ char name[50], faculty[8], date[10], ID[7], phone[11];
+ char purpose[30], location[4], BookDate[10];
+ char roomName[4];
+ int stdntNo, hour, BookTimeFrom, BooktimeTo;
+ int main()
+ {
+
+ printf("APPLICATION INFORMATION");
+ printf("\nEnter name:");
+ gets(name);
+ printf("Enter your faculty in short form :");
+ scanf("%s",&faculty);
+ getchar ();
+ printf("Enter date:");
+ fgets (date, 10, stdin);
+ getchar ();
+ printf("Enter your Staff/Student ID:");
+ fgets(ID, 7, stdin);
+ getchar ();
+ printf("Enter your mobile number:");
+ fgets(phone, 11, stdin);
+ getchar ();
+
+ printf("\nBOOKING INFORMATION");
+ printf("\nEnter number of students:");
+ scanf("%d",&stdntNo);
+ 
+ if(stdntNo <= 50)
+ {
+ printf("Enter option of lecture room (XBK1 to XBK10):");
+ scanf("%s",&roomName);
+ getchar();
+ }
+ else
+ {
+ printf("Enter option of lecture hall(YDK1 to YDK5)");
+ scanf("%s",&roomName);
+ getchar();
+ }
+
+ printf("Enter purpose:");
+ fgets (purpose, 30, stdin);
+ printf("Enter booking date:");
+ scanf("%s",&BookDate);
+ printf("Enter booking time from(24 hours system):");
+ scanf("%d",&BookTimeFrom); printf("Enter booking time to(24 hours system):");
+ scanf("%d",&BooktimeTo);
+
+ hour = (BooktimeTo - BookTimeFrom)/100;
+
+ printf("\n\n\n\t\t\tLECTURE HALL/ROOM BOOKING FORM\n");
+
+printf("========================================================================\n");
+ printf("APPLICATION INFROMATION\n");
+
+printf("========================================================================\n");
+ printf("\nNAME : %s \t\t\t STAFF/STUDENT ID : %s",name,ID);
+ printf("\nFALCULTY : %s \t\t\t\t MOBILE NUM. : %s",faculty,phone);
+ printf("\nDATE : %s",date);
+
+printf("\n========================================================================\n");
+ printf("\nBOOKING INFROMATION");
+
+printf("\n========================================================================\n");
+ printf("\nNUMBER OF STUDENT : %d",stdntNo);
+ printf("\nROOM LOCATION : %s",roomName);
+ printf("\nBOOKING DATE : %s",BookDate);
+ printf("\nBOOKING TIME : FROM %d TO %d",BookTimeFrom, BooktimeTo);
+ printf("\nTOTAL BOOKING TIME : %d HOURS",hour);
+ printf("\nPURPOSE : %s", purpose);
+ 
+
+ return 0;
+ }
